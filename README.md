@@ -1,12 +1,19 @@
 # Blockchain Medical Record System
 
-## Full Project Demo
-https://www.youtube.com/watch?v=JIswvyxmw3k&t=0s
-
 ## Setup
 1. Download Metamask Extension from chrome
 2. Set your wallet to Rinkeby test network
 3. Get ETH from Rinkeby Faucet
+
+## Steps for normal starting
+
+```
+npm uninstall solc
+npm install --save solc@0.4.25
+npm run test
+npm run start
+
+```
 
 ## How to Run System
 ```
