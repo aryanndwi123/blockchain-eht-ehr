@@ -8,6 +8,7 @@
 ## Steps for normal starting
 
 ```
+cd ethereum
 npm uninstall solc
 npm install --save solc@0.4.25
 npm run test
