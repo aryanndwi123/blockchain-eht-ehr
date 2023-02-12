@@ -24,6 +24,7 @@ class DoctorDetails extends Component {
                 dob: doctor[4],
                 qualification: doctor[5],
                 major: doctor[6],
+                qualifiicationProof: doctor[7],
                 profilePic,
             };
         }
@@ -87,6 +88,10 @@ class DoctorDetails extends Component {
                             <Grid.Column>
                                 <b style={{color:'grey'}}>Major</b>
                                 <div>{this.props.major}</div>
+                            </Grid.Column>
+                            <Grid.Column>
+                                <b style={{color:'grey'}}>Major</b>
+                                <div>{this.props.qualifiicationProof}</div>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>

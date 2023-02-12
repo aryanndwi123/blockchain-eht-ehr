@@ -135,7 +135,7 @@ class MakeAppointment extends Component {
                             placeholder = 'Lab prescription goes here'
                             value= {this.state.lab}
                             onChange= {event => 
-                                this.setState({ prescription: event.target.value })} 
+                                this.setState({ lab: event.target.value })} 
                     />
 
                     <br/>

@@ -144,7 +144,7 @@ class RegisterDoctor extends Component {
                                 placeholder = 'Link of certificate'
                                 value= {this.state.qualifiicationProof}
                                 onChange= {event => 
-                                    this.setState({ major: event.target.value })}  
+                                    this.setState({qualifiicationProof: event.target.value })}  
                             />
                         </Form.Field>
                     </Form.Group>
