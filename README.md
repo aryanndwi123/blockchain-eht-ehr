@@ -2,12 +2,13 @@
 
 ## Setup
 1. Download Metamask Extension from chrome
-2. Set your wallet to Rinkeby test network
-3. Get ETH from Rinkeby Faucet
+2. Set your wallet to Goerli test network
+3. Get ETH from Goerli Faucet
 
 ## Steps for normal starting
 
 ```
+cd ethereum
 npm uninstall solc
 npm install --save solc@0.4.25
 npm run test
