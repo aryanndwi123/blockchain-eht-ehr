@@ -26,6 +26,7 @@ class RegisterDoctor extends Component {
         gender: '',
         dob: '',
         qualification: '',
+        qualifiicationProof:'',
         major: '',
         loading: false,
         errorMessage: ''
@@ -38,7 +39,7 @@ class RegisterDoctor extends Component {
     onSubmit = async event => {
         event.preventDefault();
 
-        const { ic, name, phone, gender, dob, qualification, major } = this.state;
+        const { ic, name, phone, gender, dob, qualification,qualifiicationProof, major } = this.state;
 
         this.setState({loading: true, errorMessage: ''});
 
@@ -46,7 +47,7 @@ class RegisterDoctor extends Component {
             const accounts = await web3.eth.getAccounts();
 
             await record.methods.setDoctor(
-                ic, name, phone, gender, dob, qualification, major
+                ic, name, phone, gender, dob, qualification,qualifiicationProof, major
             ).send({ from: accounts[0] });
 
             alert("Doctor account created successfully!");
@@ -56,7 +57,7 @@ class RegisterDoctor extends Component {
             alert("This Doctor account already exists");
         }
 
-        this.setState({ loading: false, ic: '', name: '', phone: '', gender: '', dob: '', qualification: '', major: ''});
+        this.setState({ loading: false, ic: '', name: '', phone: '', gender: '', dob: '', qualification: '',qualifiicationProof: '', major: ''});
     }
 
     render() {
@@ -133,6 +134,15 @@ class RegisterDoctor extends Component {
                             <Input 
                                 placeholder = 'Eg. Biology'
                                 value= {this.state.major}
+                                onChange= {event => 
+                                    this.setState({ major: event.target.value })}  
+                            />
+                        </Form.Field>
+                        <Form.Field>
+                            <label>Qualifiication Proof</label>
+                            <Input 
+                                placeholder = 'Link of certificate'
+                                value= {this.state.qualifiicationProof}
                                 onChange= {event => 
                                     this.setState({ major: event.target.value })}  
                             />

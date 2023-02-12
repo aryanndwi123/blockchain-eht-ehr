@@ -5,8 +5,8 @@ import record from '../ethereum/record';
 import web3 from '../ethereum/web3';
 
 const statusOptions = [
-    { key: 'p', text: 'Pending', value: 'Pending' },
-    { key: 'c', text: 'Complete', value: 'Complete' }
+    { key: 'p', text: 'Lab reports pending', value: 'Pending' },
+    { key: 'c', text: 'Lab reports completed', value: 'Complete' }
 ]
 
 class MakeAppointment extends Component {
@@ -17,6 +17,7 @@ class MakeAppointment extends Component {
         prescription: '',
         description: '',
         diagnosis: '',
+        lab:'',
         status: '',
         errorMessage: ''
     };
@@ -26,7 +27,7 @@ class MakeAppointment extends Component {
     onSubmit = async event => {
         event.preventDefault();
 
-        const { patientaddr, date, time, diagnosis, prescription, description, status } = this.state;
+        const { patientaddr, date, time, diagnosis, prescription, description, status,lab } = this.state;
 
         this.setState({loading: true, errorMessage: ''});
 
@@ -34,7 +35,7 @@ class MakeAppointment extends Component {
             const accounts = await web3.eth.getAccounts();
 
             await record.methods.setAppointment(
-                patientaddr, date, time, diagnosis, prescription, description, status
+                patientaddr, date, time, diagnosis, prescription, description, status,lab
             ).send({ from: accounts[0] });
 
             alert("Appointment created successfully!");
@@ -44,13 +45,13 @@ class MakeAppointment extends Component {
             alert("An error has occured");
         }
 
-        this.setState({ loading: false, patientaddr: '', date: '', time: '', prescription: '', description: '', diagnosis: '', status: ''});
+        this.setState({ loading: false, patientaddr: '', date: '', time: '', prescription: '', description: '', diagnosis: '', status: '',lab:''});
     }
 
     render() {
         return (
             <Layout>
-                <Segment padded><h1>Make Appointment</h1></Segment>
+                <Segment padded><h1>Prescription</h1></Segment>
                 <Segment>
                 <h2 style={{ marginTop: '20px', marginBottom: '30px'}}>Appointment Information</h2>
                 <Divider clearing />
@@ -125,6 +126,17 @@ class MakeAppointment extends Component {
                                 onChange= {event => 
                                     this.setState({ description: event.target.value })}  
                     />      
+
+                <br/>
+                    <h2 style={{ marginTop: '20px', marginBottom: '30px'}}>Lab Information</h2>
+                    <Divider clearing />             
+                    <Form.TextArea
+                            label='Lab report'
+                            placeholder = 'Lab prescription goes here'
+                            value= {this.state.lab}
+                            onChange= {event => 
+                                this.setState({ prescription: event.target.value })} 
+                    />
 
                     <br/>
                     <Message error header="Oops!" content={this.state.errorMessage}/>
