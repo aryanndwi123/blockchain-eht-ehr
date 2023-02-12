@@ -68,15 +68,16 @@ class RegisterPatient extends Component {
 
     render() {
         return (
-            <Layout>
-                <Segment padded><h1>Create New Record</h1></Segment>
-                <Segment>
+            <div style={{background:"#1a202c"}}>
+            <Layout >
+                <Segment padded style={{color:"white",background:"#1a202c"}}><h1>Create New Record</h1></Segment>
+                <Segment style={{color:"white",background:"#1a202c"}}>
                 <h2 style={{ marginTop: '10px', marginBottom: '30px'}}>General Information</h2>
                 <Divider clearing />
-                <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
+                <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage} >
                     <Form.Group widths='equal'>
                         <Form.Field>
-                            <label>IC</label>
+                            <label style={{color:"white"}}>IC</label>
                             <Input
                                 placeholder = 'Eg. 001234010234'                
                                 value= {this.state.ic}
@@ -86,7 +87,7 @@ class RegisterPatient extends Component {
                         </Form.Field>
 
                         <Form.Field>
-                            <label>Full Name</label>
+                            <label style={{color:"white"}}>Full Name</label>
                             <Input
                                 placeholder = 'Eg. John Smith'                        
                                 value= {this.state.name}
@@ -96,7 +97,7 @@ class RegisterPatient extends Component {
                         </Form.Field>
 
                         <Form.Field>
-                            <label>Phone</label>
+                            <label style={{color:"white"}}>Phone</label>
                             <Input
                                 placeholder = 'Eg. 0123456789'
                                 value= {this.state.phone}
@@ -115,7 +116,7 @@ class RegisterPatient extends Component {
                         />
 
                         <Form.Field>
-                            <label>Date of Birth</label>
+                            <label style={{color:"white"}}>Date of Birth</label>
                             <Input 
                                 placeholder = 'Eg. 01/01/1997'
                                 value= {this.state.dob}
@@ -125,7 +126,7 @@ class RegisterPatient extends Component {
                         </Form.Field>
 
                         <Form.Field>
-                            <label>Height</label>
+                            <label style={{color:"white"}}>Height</label>
                             <Input 
                                 placeholder = 'Eg. 183'
                                 label={{ basic: true, content: 'cm' }}
@@ -137,7 +138,7 @@ class RegisterPatient extends Component {
                         </Form.Field>
 
                         <Form.Field>
-                            <label>Weight</label>
+                            <label style={{color:"white"}}>Weight</label>
                             <Input 
                                 placeholder = 'Eg. 65'
                                 label={{ basic: true, content: 'kg' }}
@@ -165,7 +166,7 @@ class RegisterPatient extends Component {
                     <Divider clearing />                    
                     <Form.Group widths='equal'>
                         <Form.Field>
-                            <label>Blood Group</label>
+                            <label style={{color:"white"}}>Blood Group</label>
                             <Input 
                                 placeholder = 'Eg. A-'
                                 value= {this.state.bloodgroup}
@@ -175,10 +176,13 @@ class RegisterPatient extends Component {
                         </Form.Field>
 
                         <Form.Field 
+                        
                                 label='Allergies' 
                                 control={Select} 
                                 options={allergyOptions} 
                                 onChange={this.handleAllergies}
+                                
+                            
                         />
                     </Form.Group>
                     <br/>
@@ -197,7 +201,7 @@ class RegisterPatient extends Component {
                     <Divider clearing />
                     <Form.Group widths='equal'>
                        <Form.Field>
-                            <label>Emergency Contact Name</label>
+                            <label style={{color:"white"}}>Emergency Contact Name</label>
                             <Input 
                                 placeholder = 'Eg. Taylor Smith'
                                 value= {this.state.emergencyName}
@@ -207,7 +211,7 @@ class RegisterPatient extends Component {
                         </Form.Field>
 
                         <Form.Field>
-                            <label>Emergency Contact Phone</label>
+                            <label style={{color:"white"}}>Emergency Contact Phone</label>
                             <Input 
                                 placeholder = 'Eg. 0124995002'
                                 value= {this.state.emergencyContact}
@@ -218,11 +222,13 @@ class RegisterPatient extends Component {
                     </Form.Group>
                     <br/>
                     <Message error header="Oops!" content={this.state.errorMessage}/>
-                    <Button primary loading={this.state.loading}>Create</Button>
+                    <Button primary loading={this.state.loading} style={{color:'black',background:"orange"}}>Create</Button>
                 </Form>
                 </Segment>
             </Layout>
+            </div>
         );
+    
     }
 }
 

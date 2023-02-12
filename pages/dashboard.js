@@ -267,7 +267,7 @@ export default class Dashboard extends PureComponent {
 
     render() {
         return (
-            <Layout>
+            <Layout style={{color:"white",background:"#1a202c"}}>
                 <>
                 <Card.Group centered itemsPerRow='2'>
                   <Card color={this.props.patGrowthColor}>

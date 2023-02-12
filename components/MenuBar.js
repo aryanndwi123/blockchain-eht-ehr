@@ -3,8 +3,7 @@ import { Menu, Icon, Dropdown } from 'semantic-ui-react';
 import record from '../ethereum/record';
 import web3 from '../ethereum/web3';
 import { Link } from '../routes';
-import { Router } from '../routes';
-
+import { Router } from '../routes'
 //Header that is used in all pages
 
 export default class MenuBar extends Component {
@@ -23,15 +22,12 @@ export default class MenuBar extends Component {
 
   render() {
     return (
-      <Menu size='large' inverted>
+      <Menu size='large' inverted style={{color:"white",background:"#000000"}}>
           <Link route='/'>
               <a className='item'>Home</a>
           </Link>
 
           <Menu.Menu position='right'>
-            <Link route='/dashboard'>
-                <a className='item'>Dashboard</a>
-            </Link>
 
             <Link route='/list'>
                 <a className='item'>Records List</a>
