@@ -41,8 +41,9 @@ class RecordsList extends Component {
 
     render() {
         return (
+            <div style={{background:'#1a202c'}} >
             <Layout>
-                <div>
+                <div style={{background:'#1a202c'}}>
                    
                     <Form onSubmit={this.onSearch}> 
                         <Form.Field>
@@ -58,6 +59,7 @@ class RecordsList extends Component {
                     {this.renderRecords()}
                 </div>
             </Layout>
+            </div>
         );
     }
 }

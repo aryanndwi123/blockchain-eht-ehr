@@ -1,11 +1,13 @@
+// import dotenv;
 const HDWalletProvider = require('truffle-hdwallet-provider');
 const Web3 = require('web3');
 const compiledRecord = require('./build/Record.json');
 
+
 //Link to rinkeby network by using Infura and providing seed phrase of metamask wallet
 const provider = new HDWalletProvider(
-    'miracle entire horse you fetch rebuild act twist hard pioneer three visa',
-    'https://goerli.infura.io/v3/da568bf500a54c0da0b20d3546498a67',
+    PROCESS.MNEMONIC,
+    PROCESS.LINK,
 );
 
 const web3 = new Web3(provider);

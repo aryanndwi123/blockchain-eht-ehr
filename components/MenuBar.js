@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Icon, Dropdown } from 'semantic-ui-react';
+import { Menu, Icon, Dropdown,Image} from 'semantic-ui-react';
 import record from '../ethereum/record';
 import web3 from '../ethereum/web3';
 import { Link } from '../routes';
@@ -24,7 +24,7 @@ export default class MenuBar extends Component {
     return (
       <Menu size='large' inverted style={{color:"white",background:"#000000"}}>
           <Link route='/'>
-              <a className='item'>Home</a>
+              <a className='item'><Image src="https://www.linkpicture.com/q/SAVE_20230212_120724.jpg" style={{height:"50px"}}/></a>
           </Link>
 
           <Menu.Menu position='right'>

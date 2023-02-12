@@ -62,15 +62,16 @@ class RegisterDoctor extends Component {
 
     render() {
         return (
+            <div style={{background:"#1a202c"}}>
             <Layout>
-                <Segment padded><h1>Register New Doctor</h1></Segment>
-                <Segment>
+                <Segment padded style={{background:"#1a202c"}}><h1>Register New Doctor</h1></Segment>
+                <Segment style={{background:"#1a202c"}}>
                 <h2 style={{ marginTop: '20px', marginBottom: '30px'}}>General Information</h2>
                 <Divider clearing />
                 <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
                     <Form.Group widths='equal'>
                         <Form.Field>
-                            <label>IC</label>
+                            <label style={{color:"white"}}>ID</label>
                             <Input
                                 placeholder = 'Eg. 001234010234'                
                                 value= {this.state.ic}
@@ -80,7 +81,7 @@ class RegisterDoctor extends Component {
                         </Form.Field>
 
                         <Form.Field>
-                            <label>Full Name</label>
+                            <label style={{color:"white"}}>Full Name</label>
                             <Input
                                 placeholder = 'Eg. John Smith'                        
                                 value= {this.state.name}
@@ -90,7 +91,7 @@ class RegisterDoctor extends Component {
                         </Form.Field>
 
                         <Form.Field>
-                            <label>Phone</label>
+                            <label style={{color:"white"}}>Phone</label>
                             <Input
                                 placeholder = 'Eg. 0123456789'
                                 value= {this.state.phone}
@@ -109,7 +110,7 @@ class RegisterDoctor extends Component {
                         />
 
                         <Form.Field>
-                            <label>Date of Birth</label>
+                            <label style={{color:"white"}}>Date of Birth</label>
                             <Input 
                                 placeholder = 'Eg. 01/01/1997'
                                 value= {this.state.dob}
@@ -123,6 +124,7 @@ class RegisterDoctor extends Component {
                     <Divider clearing />
                     <Form.Group widths='equal'>
                         <Form.Field 
+                        style={{color:"white"}}
                             label='Highest Qualification' 
                             control={Select} 
                             options={qualificationOptions} 
@@ -130,7 +132,7 @@ class RegisterDoctor extends Component {
                         />
 
                         <Form.Field>
-                            <label>Major</label>
+                            <label style={{color:"white"}}>Major</label>
                             <Input 
                                 placeholder = 'Eg. Biology'
                                 value= {this.state.major}
@@ -139,7 +141,7 @@ class RegisterDoctor extends Component {
                             />
                         </Form.Field>
                         <Form.Field>
-                            <label>Qualifiication Proof</label>
+                            <label style={{color:"white"}}>Qualifiication Proof</label>
                             <Input 
                                 placeholder = 'Link of certificate'
                                 value= {this.state.qualifiicationProof}
@@ -150,10 +152,11 @@ class RegisterDoctor extends Component {
                     </Form.Group>
                     <br/>
                     <Message error header="Oops!" content={this.state.errorMessage}/>
-                    <Button primary loading={this.state.loading}>Create</Button>
+                    <Button primary loading={this.state.loading} style={{color:'black',background:"orange"}}>Create</Button>
                 </Form>
                 </Segment>
             </Layout>
+            </div>
         );
     }
 }

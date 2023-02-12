@@ -32,15 +32,16 @@ const HomepageHeading = ({ mobile }) => (
   <div style={{color:"white",background:"#0000000"}} >
   <Container text style={{minHeight:'100vh',color:"white",background:"#0000000"}}>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"></link>
+    <Image src="https://www.linkpicture.com/q/NEWW-2-1.png" size='medium' centered/>
     <Header
       as='h1'
-      content='Quick Medical Solutions'
+      content='Quick Medical Solutions from Systole to Diastole'
       inverted
       style={{
         fontSize: mobile ? '2em' : '3em',
         fontWeight: 'bold',
         marginBottom: 0,
-        marginTop: mobile ? '1.5em' : '3em',
+        marginTop: mobile ? '1.5em' : '1.5em',
         fontFamily: 'Arial',
         color: 'orange'
       }}
@@ -53,6 +54,7 @@ const HomepageHeading = ({ mobile }) => (
         fontSize: mobile ? '1.5em' : '1.3em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '2em',
+        lineSpacing:'3em'
 
       }}
     />
